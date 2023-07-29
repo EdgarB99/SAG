@@ -37,11 +37,6 @@ async function bootstrap() {
     }),
   )
 
-  const ipAddress = '0.0.0.0';
-  const port = 3000; // Puerto en el que deseas que la aplicación escuche
-
-  await app.listen(port, ipAddress, () => {
-    console.log(`La aplicación está escuchando en http://${ipAddress}:${port}`);
-  });
+  await app.listen(3000);
 }
 bootstrap();
