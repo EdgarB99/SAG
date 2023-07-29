@@ -30,11 +30,11 @@ import { ContenidoDieta } from './contenido-dieta/entities/contenido-dieta.entit
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.HOSTDEV,
-      port: 7714 || 3000,
-      username: process.env.DBUSERNAME,
-      password: process.env.PASSDEV,
-      database: process.env.DBNAMEDEV,
+      host: process.env.HOSTDEV || 'localhost',
+      port: +process.env.PORT || 3306,
+      username: process.env.DBUSERNAME || 'root',
+      password: process.env.PASSDEV || 'password',
+      database: process.env.DBNAMEDEV || 'ganaderiadb',
       entities: [Auth, Vaca, Lote, Peso, Venta, Dieta, Compra, Dosificacion, ContenidoDieta],
       synchronize: true,
     }),
