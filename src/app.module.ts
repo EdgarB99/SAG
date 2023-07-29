@@ -31,8 +31,8 @@ import { ContenidoDieta } from './contenido-dieta/entities/contenido-dieta.entit
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.HOSTDEV,
-      port: 3306,
-      username: 'root',
+      port: 7714,
+      username: process.env.DBUSERNAME,
       password: process.env.PASSDEV,
       database: process.env.DBNAMEDEV,
       entities: [Auth, Vaca, Lote, Peso, Venta, Dieta, Compra, Dosificacion, ContenidoDieta],
