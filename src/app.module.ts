@@ -25,7 +25,7 @@ import { ContenidoDietaModule } from './contenido-dieta/contenido-dieta.module';
 import { Dosificacion } from './dosificacion/entities/dosificacion.entity';
 import { ContenidoDieta } from './contenido-dieta/entities/contenido-dieta.entity';
 
-
+//ETE ES EL BUENO
 @Module({
   imports: [
     TypeOrmModule.forRoot({
