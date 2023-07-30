@@ -31,7 +31,7 @@ import { ContenidoDieta } from './contenido-dieta/entities/contenido-dieta.entit
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'containers-us-west-137.railway.app',
-      port: 7714,
+      port: 7714 || 3000,
       username: 'root',
       password: 'gCBY16wUvpN8euliKr8G',
       database: 'railway',
