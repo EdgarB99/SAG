@@ -24,17 +24,19 @@ import { DosificacionModule } from './dosificacion/dosificacion.module';
 import { ContenidoDietaModule } from './contenido-dieta/contenido-dieta.module';
 import { Dosificacion } from './dosificacion/entities/dosificacion.entity';
 import { ContenidoDieta } from './contenido-dieta/entities/contenido-dieta.entity';
+import { ConfigModule } from '@nestjs/config';
 
 //ETE ES EL BUENO
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'containers-us-west-137.railway.app',
-      port: 7714 || 3000,
-      username: 'root',
-      password: 'gCBY16wUvpN8euliKr8G',
-      database: 'railway',
+      host: process.env.HOSTDEV,
+      port: +process.env.PORT,
+      username: process.env.DBUSERNAME,
+      password: process.env.PASSDEV,
+      database: process.env.DBNAMEDEV,
       entities: [Auth, Vaca, Lote, Peso, Venta, Dieta, Compra, Dosificacion, ContenidoDieta],
       synchronize: true,
     }),
